@@ -1,0 +1,39 @@
+{
+  "name": "aspformatter",
+  "version": "1.0.0",
+  "description": "Provide formatting and manipulation of clingo output",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.ncsu.edu:csdabral/aspformatter.git"
+  },
+  "author": "Chinmaya Dabral",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "autoprefixer": "^9.6.1",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.1.0",
+    "extract-loader": "^3.1.0",
+    "file-loader": "^4.1.0",
+    "node-sass": "^4.12.0",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^7.1.0",
+    "webpack": "^4.38.0",
+    "webpack-cli": "^3.3.6"
+  },
+  "dependencies": {
+    "@material/auto-init": "^3.1.0",
+    "@material/button": "^3.1.0",
+    "@material/drawer": "^3.1.0",
+    "@material/ripple": "^3.1.0",
+    "@material/textfield": "^3.1.0",
+    "@material/top-app-bar": "^3.1.0",
+    "redom": "^3.24.0"
+  }
+}
