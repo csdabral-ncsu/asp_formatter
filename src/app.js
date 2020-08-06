@@ -71,7 +71,7 @@ function processAnswerSet(raw_input) {
     // Draw timeline
     removeAllChildren(timeline); // delete any existing graph
 
-    drawTimelineGraph('aspf-timeline', graph, 20, 800, 600, 50);
+    drawTimelineGraph('aspf-timeline', graph, 20, 800, 400, 50);
     
     // const notation = graph.get_newick_notation();
     // svgtree = new SVGTree(notation, timeline, {
