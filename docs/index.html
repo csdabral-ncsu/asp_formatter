@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="bundle.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+
+<body class='mdc-typography'>
+
+    <header class="mdc-top-app-bar app-bar mdc-top-app-bar--short" id="aspf-app-bar">
+        <div class="mdc-top-app-bar__row">
+            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                <button href="#" class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button">menu</button>
+                <span class="mdc-top-app-bar__title">ASP Formatter</span>
+            </section>
+        </div>
+    </header>
+
+    <aside class="mdc-drawer mdc-drawer--dismissible mdc-top-app-bar--fixed-adjust" id="aspf-drawer">
+        <div class="mdc-drawer__content">
+            <!-- <div class="mdc-list">
+                <div class="mdc-drawer__header">
+                    <h3 class="mdc-drawer__title">Mail</h3>
+                    <h6 class="mdc-drawer__subtitle">email@material.io</h6>
+                </div>
+                <hr class="mdc-list-divider">
+                <h6 class="mdc-list-group__subheader">Labels</h6>
+                <a class="mdc-list-item mdc-list-item--activated" href="#" aria-current="page">
+                    <i class="material-icons mdc-list-item__graphic" aria-hidden="true">inbox</i>
+                    <span class="mdc-list-item__text">Inbox</span>
+                </a>
+                <a class="mdc-list-item" href="#">
+                    <i class="material-icons mdc-list-item__graphic" aria-hidden="true">send</i>
+                    <span class="mdc-list-item__text">Outgoing</span>
+                </a>
+                <a class="mdc-list-item" href="#">
+                    <i class="material-icons mdc-list-item__graphic" aria-hidden="true">drafts</i>
+                    <span class="mdc-list-item__text">Drafts</span>
+                </a>
+                <hr class="mdc-list-divider">
+                <h6 class="mdc-list-group__subheader">Filter</h6>
+                
+                
+            </div> -->
+            <hr class="mdc-list-divider">
+            <h6 class="mdc-list-group__subheader">Filter</h6>
+            <div class="filter-buttons">
+                <button class="mdc-button mdc-button--outlined filter-button" id="aspf-filter-all">
+                    <span class="mdc-button__label">All</span>
+                </button>
+                <button class="mdc-button mdc-button--outlined filter-button" id="aspf-filter-none">
+                    <span class="mdc-button__label">None</span>
+                </button>
+            </div>
+            <template id="aspf-template"></template>
+            <div class="mdc-chip-set mdc-chip-set--filter" id="aspf-filter-chip-set">
+                <button class="mdc-chip">
+                    <span class="mdc-chip__checkmark">
+                        <svg class="mdc-chip__checkmark-svg" viewBox="-2 -3 30 30">
+                            <path class="mdc-chip__checkmark-path" fill="none" stroke="black"
+                                d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                        </svg>
+                    </span>
+                    <span class="mdc-chip__text">Follow instructions</span>
+                </button>
+            </div>
+
+            <ul class="mdc-list" role="group">
+                <hr class="mdc-list-divider">
+                <h6 class="mdc-list-group__subheader">Group</h6>
+                <li class="mdc-list-item" role="checkbox" aria-checked="false">
+                    <label for="aspf-group-by-name-checkbox">By predicate name</label>
+                    <div class="mdc-switch mdc-list-item__meta" id="aspf-group-by-name">
+                        <div class="mdc-switch__track"></div>
+                        <div class="mdc-switch__thumb-underlay">
+                            <div class="mdc-switch__thumb">
+                                <input type="checkbox" id="aspf-group-by-name-checkbox"
+                                    class="mdc-switch__native-control" role="switch">
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="mdc-list-item" role="checkbox" aria-checked="false">
+                    <label for="aspf-group-by-numargs-checkbox">By number of arguments</label>
+                    <div class="mdc-switch mdc-list-item__meta" id="aspf-group-by-numargs">
+                        <div class="mdc-switch__track"></div>
+                        <div class="mdc-switch__thumb-underlay">
+                            <div class="mdc-switch__thumb">
+                                <input type="checkbox" id="aspf-group-by-numargs-checkbox"
+                                    class="mdc-switch__native-control" role="switch">
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <ul class="mdc-list" role="group">
+                <hr class="mdc-list-divider"/>
+                <h6 class="mdc-list-group__subheader">Sort</h6>
+                <div class="mdc-select mdc-select--outlined drawer-width-class drawer-select" id="aspf-sort-by">
+                    <i class="mdc-select__dropdown-icon"></i>
+                    <div role="button" aria-haspopup="listbox"
+                        aria-labelledby="outlined_enhanced outlined_enhanced-label" class="mdc-select__selected-text"
+                        tabindex="0"></div>
+                    <div class="mdc-select__menu mdc-menu mdc-menu-surface drawer-width-class">
+                        <ul class="mdc-list" id="aspf-sort-by-options">
+                            <li class="mdc-list-item mdc-list-item--selected" data-value="" aria-selected="true"></li>
+                        </ul>
+                    </div>
+                    <div class="mdc-notched-outline mdc-notched-outline--upgraded">
+                        <div class="mdc-notched-outline__leading"></div>
+                        <div class="mdc-notched-outline__notch"><span id="outlined_enhanced-label"
+                                class="mdc-floating-label">Sort by argument #</span></div>
+                        <div class="mdc-notched-outline__trailing"></div>
+                    </div>
+                </div>
+            </ul>
+        </div>
+        </div>
+    </aside>
+
+    <div class="mdc-drawer-app-content mdc-top-app-bar--fixed-adjust">
+        <main class="main-content" id="main-content">
+
+            <div class="mdc-text-field mdc-text-field--textarea mdc-text-field--fullwidth" id="aspf-clingo-output">
+                <textarea id="aspf-clingo-output-textarea" class="mdc-text-field__input" rows="8"></textarea>
+                <div class="mdc-notched-outline">
+                    <div class="mdc-notched-outline__leading"></div>
+                    <div class="mdc-notched-outline__notch">
+                        <label for="aspf-clingo-output-textarea" class="mdc-floating-label">Clingo Output</label>
+                    </div>
+                    <div class="mdc-notched-outline__trailing"></div>
+                </div>
+            </div>
+            <div class="mdc-text-field-helper-line">
+                <div class="mdc-text-field-helper-text">Paste the raw Clingo output here</div>
+            </div>
+            <div style="text-align:left">
+                <button class="mdc-button mdc-button--unelevated" id="aspf-go">
+                    <span class="mdc-button__label">Go</span>
+                    <i class="material-icons mdc-button__icon" aria-hidden="true">check_circle</i>
+                </button>
+            </div>
+            <div id="aspf-timeline" class="timeline-scroll">
+            </div>
+            <div style="text-align:left">
+                <button class="mdc-button mdc-button--outlined mdc-button--unelevated" id="aspf-deselect-timestep">
+                    <span class="mdc-button__label">Clear</span>
+                    <i class="material-icons mdc-button__icon" aria-hidden="true">cancel</i>
+                </button>
+            </div>
+            <div id="aspf-output">
+                Paste the output above, and click on "Go"
+                <hr class="mdc-list-divider"/>
+            </div>
+
+        </main>
+    </div>
+</body>
+
+<script src="bundle.js" async></script>
+
+</html>

@@ -1,22 +1,35 @@
-@import "@material/button/mdc-button";
 @import "@material/top-app-bar/mdc-top-app-bar";
 @import "@material/icon-button/mdc-icon-button";
 @import "@material/drawer/mdc-drawer";
 @import "@material/list/mdc-list";
 @import "@material/textfield/mdc-text-field";
-
-// .foo-button {
-//   @include mdc-button-ink-color(teal);
-//   @include mdc-states(teal);
-// }
+@import "@material/textfield/helper-text/mdc-text-field-helper-text";
+@import "@material/button/mdc-button";
+@import "@material/typography/mdc-typography";
+@import "@material/switch/mdc-switch";
+@import "@material/form-field/mdc-form-field";
+@import "@material/menu-surface/mdc-menu-surface";
+@import "@material/menu/mdc-menu";
+@import "@material/select/mdc-select";
+@import "@material/chips/mdc-chips";
 
 #aspf-app-bar {
   top: 0px;
   left: 0px;
 }
 
+$drawer_width: 600px;
+
 #aspf-drawer {
-  @include mdc-drawer-width(600px);
+  @include mdc-drawer-width($drawer_width);
+}
+
+#aspf-output {
+  margin:20px;
+}
+
+.aspf-group {
+  font-weight: 800;
 }
 
 body {
@@ -33,6 +46,7 @@ body {
 .main-content {
   overflow: auto;
   height: 100%;
+  padding-top: 20px;
 }
 
 .app-bar {
@@ -42,4 +56,32 @@ body {
 // only apply this style if below top app bar
 .mdc-top-app-bar {
   z-index: 7;
+}
+
+.drawer-width-class {
+  width: $drawer_width - 30px;
+}
+
+.drawer-select {
+  // align-content: center;
+  // padding-top: 10px;
+  margin-top: 10px;
+  margin-left: 15px;
+}
+
+.filter-buttons {
+  margin-top: 10px;
+  margin-left: 15px;
+  align-items: center;
+}
+
+.timeline-scroll {
+  line-height: 0;
+  width: 100%;
+  overflow: scroll;
+  height: 600px;
+}
+
+.filter-button {
+  margin: 5px;
 }

@@ -1,3 +1,5 @@
-Theming:
+Move html to src folder, and use https://github.com/webpack-contrib/copy-webpack-plugin to copy to dist/ during build.
+
+Theming
 https://github.com/material-components/material-components-web/tree/master/packages/mdc-theme
 https://material.io/develop/web/components/theme/

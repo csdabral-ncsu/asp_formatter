@@ -4,10 +4,8 @@ const autoprefixer = require('autoprefixer');
 module.exports = [{
     entry: ['./src/app.scss', './src/app.js'],
     output: {
-        // This is necessary for webpack to compile
-        // But we never use style-bundle.js
         filename: 'bundle.js',
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, 'docs'),
     },
     module: {
         rules: [
@@ -38,12 +36,15 @@ module.exports = [{
             },
             {
                 test: /\.js$/,
+                exclude: /node_modules/,
                 loader: 'babel-loader',
-                query: {
+                options: {
                     presets: ['@babel/preset-env'],
+                    plugins: ['@babel/plugin-proposal-class-properties'],
+                    cacheDirectory: true,
                 },
             }
         ]
     },
-    mode: 'production',
+    mode: 'development',
 }];
