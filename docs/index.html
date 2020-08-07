@@ -17,7 +17,7 @@
         </div>
     </header>
 
-    <aside class="mdc-drawer mdc-drawer--dismissible mdc-top-app-bar--fixed-adjust" id="aspf-drawer">
+    <aside class="mdc-drawer mdc-drawer--dismissible mdc-top-app-bar--fixed-adjust mdc-drawer--open" id="aspf-drawer">
         <div class="mdc-drawer__content">
             <!-- <div class="mdc-list">
                 <div class="mdc-drawer__header">
@@ -44,6 +44,13 @@
                 
             </div> -->
             <hr class="mdc-list-divider">
+            <h4>Instructions</h4>
+            <ul>
+                <li>Paste the answer set into the text box on the right and click Go.</li>
+                <li>You can click on the nodes in the generated timeline graph to view only predicates corresponding to that time step. Click clear to show all predicates again.</li>
+                <li>You can filter, group, and sort predicates by using the controls below.</li>
+            </ul>
+            <hr class="mdc-list-divider">
             <h6 class="mdc-list-group__subheader">Filter</h6>
             <div class="filter-buttons">
                 <button class="mdc-button mdc-button--outlined filter-button" id="aspf-filter-all">
@@ -69,14 +76,14 @@
             <ul class="mdc-list" role="group">
                 <hr class="mdc-list-divider">
                 <h6 class="mdc-list-group__subheader">Group</h6>
-                <li class="mdc-list-item" role="checkbox" aria-checked="false">
+                <li class="mdc-list-item" role="checkbox" aria-checked="true">
                     <label for="aspf-group-by-name-checkbox">By predicate name</label>
-                    <div class="mdc-switch mdc-list-item__meta" id="aspf-group-by-name">
+                    <div class="mdc-switch mdc-switch--checked mdc-list-item__meta" id="aspf-group-by-name">
                         <div class="mdc-switch__track"></div>
                         <div class="mdc-switch__thumb-underlay">
                             <div class="mdc-switch__thumb">
                                 <input type="checkbox" id="aspf-group-by-name-checkbox"
-                                    class="mdc-switch__native-control" role="switch">
+                                    class="mdc-switch__native-control" role="switch" checked>
                             </div>
                         </div>
                     </div>
