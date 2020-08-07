@@ -46,9 +46,16 @@
             <hr class="mdc-list-divider">
             <h4>Instructions</h4>
             <ul>
-                <li>Paste the answer set into the text box on the right and click Go.</li>
-                <li>You can click on the nodes in the generated timeline graph to view only predicates corresponding to that time step. Click clear to show all predicates again.</li>
+                <li>Paste the answer set into the text box on the right and click <strong>Go</strong>.</li>
+                <li>You can <strong>click on the nodes</strong> in the generated timeline graph to view only predicates corresponding to that time step. Click <strong>Clear</strong> to show predicates from all nodes again.</li>
                 <li>You can filter, group, and sort predicates by using the controls below.</li>
+            </ul>
+            <h4>About the generated timeline graph</h4>
+            <ul>
+                <li>Each timeline starts at the node called "start"</li>
+                <li>A timeline may have multiple alternate endings (including one called "end").</li>
+                <li>Graph node identifiers are arbitrary numbers, not ordered.</li>
+                <li>"happens" predicates denote actions taken by an agent; they occur on nodes other than "start" or ending nodes.</li>
             </ul>
             <hr class="mdc-list-divider">
             <h6 class="mdc-list-group__subheader">Filter</h6>
@@ -131,7 +138,7 @@
         <main class="main-content" id="main-content">
 
             <div class="mdc-text-field mdc-text-field--textarea mdc-text-field--fullwidth" id="aspf-clingo-output">
-                <textarea id="aspf-clingo-output-textarea" class="mdc-text-field__input" rows="8"></textarea>
+                <textarea id="aspf-clingo-output-textarea" class="mdc-text-field__input" rows="4"></textarea>
                 <div class="mdc-notched-outline">
                     <div class="mdc-notched-outline__leading"></div>
                     <div class="mdc-notched-outline__notch">
